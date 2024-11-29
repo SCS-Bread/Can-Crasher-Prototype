@@ -12,4 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ecfaa873e85dce5459159f61b25fbb60, type: 3}
   m_Name: Can Crasher Setting
   m_EditorClassIdentifier: 
-  CountdownTime: 60
+  CountdownTime: 5
+  AllCanItem:
+  - CanType: 0
+    CanData: {fileID: 11400000, guid: ddaffbc2094f01f42b81d21ae431152c, type: 2}
+  - CanType: 1
+    CanData: {fileID: 11400000, guid: 6b919dcd54850004c9ae2e3ce619b090, type: 2}

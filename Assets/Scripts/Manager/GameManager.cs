@@ -4,18 +4,33 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    [SerializeField] private CanCrasherSetting setting;
+    public CanCrasherSetting Setting;
+    public InputManager InputManager;
+    public UIManager UIManager;
 
-    [SerializeField] private InputManager inputManager;
-    [SerializeField] private UIManager UIManager;
+    private Fsm gameFsm;
+    private int score;
 
-    private Countdown countdown;
 
-    
     private void OnEnable()
     {
-            
+        Setting.CreateCanItemDictionary();
+        
     }
 
 
+    private void Start()
+    {
+        gameFsm = new Fsm(this);
+        gameFsm.ChangeState(new StartState(gameFsm));
+    }
+
+
+    private void Update()
+    {
+        gameFsm.UpdateState();        
+    }
+
+
+    
 }
